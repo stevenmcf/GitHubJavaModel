@@ -8,5 +8,12 @@ public class Commit {
         this.description = description;
     }
 
+    public String getDescription(){
+        return this.description;
+    }
+
+    public int getId(){
+        return this.id;
+    }
 
 }
