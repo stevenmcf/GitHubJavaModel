@@ -15,6 +15,21 @@ public class Repo {
 
     }
 
+    public String getRepoName(){
+        return this.name;
+    }
 
+    public String getDescription(){
+        return this.description;
+    }
 
+    public RepoType getRepoType(){
+        return this.repoType;
+    }
+    public void addCommit(Commit commit){
+        this.commits.add(commit);
+    }
+    public int countCommits(){
+        return this.commits.size();
+    }
 }

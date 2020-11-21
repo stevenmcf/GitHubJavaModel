@@ -9,12 +9,12 @@ public class CommitTest {
 
     @Before
     public void setUp(){
-        commit = new Commit(1, "initial commit");
+        commit = new Commit(1, "The story's just begun");;
     }
 
     @Test
     public void canGetDescription(){
-        assertEquals("initial commit", commit.getDescription());
+        assertEquals("The story's just begun", commit.getDescription());
     }
 
     @Test
