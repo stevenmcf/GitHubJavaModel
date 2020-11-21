@@ -13,58 +13,60 @@ public class AccountTest {
     Repo repo2;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         account = new Account("Eddie Vedder", "PJ10", AccountType.PRO);
         account1 = new Account("Jonah Lomu", "JL95", AccountType.FREE);
         account2 = new Account("Billy Corgan", "ImASmashingPumpkin", AccountType.PRO);
-        repo = new Repo("Pearl Jam", "My band on tour", RepoType.PRIVATE );
+        repo = new Repo("Pearl Jam", "My band on tour", RepoType.PRIVATE);
         repo1 = new Repo("World Cup '95 Highlight", "I ran over tony underwood", RepoType.PUBLIC);
         repo2 = new Repo("Mellon Collie", "Story of a sad dog", RepoType.PRIVATE);
     }
+
     @Test
-    public void hasUserName(){
+    public void hasUserName() {
         assertEquals("Eddie Vedder", account.getUserName());
     }
 
-//    @Test
-//    public void hasUserName(){
-//        assertEquals("Jonah Lomu", account1.getUserName());
-//    }
-//
-//    @Test - why does this test fail when trying to run more than once but assertEquals is for the different set-ups above ?
-//    public void hasUserName(){
-//        assertEquals("Billy Corgan", account2.getUserName());
-//    }
+    @Test
+    public void canChangeUserName() {
+        assertEquals("Stone Gossard", account.setUserName("Stone Gossard"));
+    }
 
     @Test
-    public void hasAccountName(){
+    public void hasAccountName() {
         assertEquals("PJ10", account.getAccountName());
     }
 
-//    @Test
-//    public void hasAccountName(){
-//        assertEquals("JL95", account1.getAccountName());
-//    }
-//
-//    @Test
-//    public void hasAccountName(){
-//        assertEquals("Story of a sad dog", account2.getAccountName());
-//    }
-
     @Test
-    public void hasAccountType(){
+    public void hasAccountType() {
         assertEquals(AccountType.PRO, account.getAccountType());
     }
 
-
     @Test
-    public void canAddRepository(){
-        account2.addRepo(repo);
-        assertEquals(1, account2.countRepos() );
+    public void hasNoRepos() {
+        assertEquals(0, account.countRepos());
     }
 
-//    public AccountType canSetAccountType(){
-//        account.setAccount
-//    }
+    @Test
+    public void canAddRepository() {
+        account2.addRepo(repo);
+        assertEquals(1, account2.countRepos());
+    }
 
+    @Test
+    public void canFindRepoByName() {
+        account.addRepo(repo);
+        assertEquals(repo, account.findRepoByName("Pearl Jam"));
+
+    }
+
+    @Test
+    public void canUpgradeAccount(){
+        assertEquals(AccountType.PRO, account1.setAccountType(AccountType.PRO));
+    }
+
+    @Test
+    public void canDowngradeAccount(){
+        assertEquals(AccountType.FREE, account.setAccountType(AccountType.FREE));
+    }
 }

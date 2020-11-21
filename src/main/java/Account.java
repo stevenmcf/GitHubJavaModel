@@ -20,6 +20,10 @@ public class Account {
         return this.userName;
     }
 
+    public String setUserName(String newUserName){
+        return this.userName = newUserName;
+    }
+
     public String getAccountName(){
         return this.accName;
     }
@@ -36,5 +40,18 @@ public class Account {
         return this.repos.size();
     }
 
+    public Repo findRepoByName(String name) {
+        Repo foundRepo = null;
+        for (Repo repo : this.repos) {
+            if (repo.getRepoName().equals(name)) {
+                foundRepo = repo;
+            }
+        }
+        return foundRepo;
+    }
+
+    public AccountType setAccountType(AccountType newAccountType){
+        return this.accountType = newAccountType;
+    }
 
 }

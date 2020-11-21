@@ -47,6 +47,7 @@ public class Repo {
         return this.commits.size();
     }
 
+//    found on stack overflow
 //    public Commit findCommitById(int commits} { //The class name is Block
 //        for(Commit commit : commits) {
 //        if(block.x == x {

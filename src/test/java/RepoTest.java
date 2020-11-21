@@ -46,6 +46,7 @@ public class RepoTest {
     public void canChangeRepositoryType(){
         assertEquals(RepoType.PRIVATE, repo.setRepoType(RepoType.PRIVATE));
     }
+
     @Test
     public void canAddCommit(){
         repo1.addCommit(commit1);
@@ -61,5 +62,7 @@ public class RepoTest {
         assertEquals(commit2, repo.findCommitById(397683));
 
     }
+
+
     }
 
