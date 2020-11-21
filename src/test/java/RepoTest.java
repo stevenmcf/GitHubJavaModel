@@ -37,12 +37,16 @@ public class RepoTest {
     public void canAddCommit(){
         repo1.addCommit(commit1);
         assertEquals(1, repo1.countCommits());
-
     }
 
-//    @Test
-//    public void canGetCommitById(){
-//        repo.addCommit(commit1);
-//
+//    get commit by id.
+//    if there is a commit. return the data by calling id
+
+    @Test
+    public void canGetCommitById(){
+        repo.addCommit(commit2);
+        assertEquals(commit2, repo.findCommitById(397683));
+
+    }
     }
 

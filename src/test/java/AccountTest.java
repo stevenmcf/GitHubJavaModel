@@ -59,9 +59,12 @@ public class AccountTest {
 
     @Test
     public void canAddRepository(){
-        account2.addRepo(repo2);
+        account2.addRepo(repo);
         assertEquals(1, account2.countRepos() );
     }
 
+//    public AccountType canSetAccountType(){
+//        account.setAccount
+//    }
 
 }

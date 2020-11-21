@@ -1,4 +1,6 @@
-public class Commit {
+import java.util.ArrayList;
+
+public class Commit extends ArrayList<Commit> {
 
     private int id;
     private String description;
