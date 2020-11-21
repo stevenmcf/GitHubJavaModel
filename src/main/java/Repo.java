@@ -19,12 +19,24 @@ public class Repo {
         return this.name;
     }
 
+    public String setRepoName(String newName){
+        return this.name = newName;
+    }
+
     public String getDescription() {
         return this.description;
     }
 
+    public String setDescription(String newDescription){
+        return this.description = newDescription;
+    }
+
     public RepoType getRepoType() {
         return this.repoType;
+    }
+
+    public RepoType setRepoType(RepoType repoType){
+        return this.repoType = repoType;
     }
 
     public void addCommit(Commit commit) {
@@ -35,8 +47,6 @@ public class Repo {
         return this.commits.size();
     }
 
-//
-//    }
 //    public Commit findCommitById(int commits} { //The class name is Block
 //        for(Commit commit : commits) {
 //        if(block.x == x {

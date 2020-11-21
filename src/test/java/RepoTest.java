@@ -23,6 +23,10 @@ public class RepoTest {
     public void hasRepositoryName(){
         assertEquals("Mellon Collie", repo2.getRepoName());
     }
+    @Test
+    public void canChangeRepoName(){
+        assertEquals("Should be Java related not rugby related", repo1.setRepoName("Should be Java related not rugby related"));
+    }
 
     @Test
     public void hasDescription(){
@@ -30,8 +34,17 @@ public class RepoTest {
     }
 
     @Test
+    public void canChangeDescription(){
+        assertEquals("Java loves Pearl Jam", repo1.setDescription("Java loves Pearl Jam"));
+    }
+
+    @Test
     public void hasRepositoryType(){
         assertEquals(RepoType.PUBLIC, repo1.getRepoType());
+    }
+    @Test
+    public void canChangeRepositoryType(){
+        assertEquals(RepoType.PRIVATE, repo.setRepoType(RepoType.PRIVATE));
     }
     @Test
     public void canAddCommit(){
